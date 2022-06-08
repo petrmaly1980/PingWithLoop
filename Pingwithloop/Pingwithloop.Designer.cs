@@ -86,7 +86,7 @@
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(299, 20);
             this.textBoxIP.TabIndex = 2;
-            this.textBoxIP.Text = "212.111.7.50";
+            this.textBoxIP.Text = "8.8.8.8";
             // 
             // label1
             // 
