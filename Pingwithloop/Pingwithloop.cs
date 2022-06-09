@@ -61,7 +61,7 @@ namespace Pingwithloop
                     //textBoxSuccess.AppendText("Ping to " + textBoxIP.Text + " " + reply.Status + " " + now + Environment.NewLine);
                     counterSuccess++;
                     labelCounterSuccess.Text = counterSuccess.ToString();
-                    dataGridViewSuccess.Rows.Add (textBoxIP.Text, reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
+                    dataGridViewSuccess.Rows.Add (textBoxIP.Text, textBoxBufferSize.Text,  reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
 
                 }
                 else
@@ -69,7 +69,7 @@ namespace Pingwithloop
                     //textBoxFailed.AppendText("Ping to " + textBoxIP.Text + " " + reply.Status + " " + now + Environment.NewLine);
                     counterFailed++;
                     labelCounterFailed.Text = counterFailed.ToString();
-                    dataGridViewFailed.Rows.Add(textBoxIP.Text, reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
+                    dataGridViewFailed.Rows.Add(textBoxIP.Text, textBoxBufferSize.Text, reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
                 }
                 counterAll = counterSuccess + counterFailed;
                 labelCounterAll.Text = counterAll.ToString();

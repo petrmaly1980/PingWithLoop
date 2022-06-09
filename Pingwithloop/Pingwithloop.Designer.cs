@@ -50,15 +50,7 @@
             this.labelCounterFailed = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.dataGridViewSuccess = new System.Windows.Forms.DataGridView();
-            this.cIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewFailed = new System.Windows.Forms.DataGridView();
-            this.colFailedIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFailedStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFailedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFailedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeOut = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxTimeOut = new System.Windows.Forms.TextBox();
@@ -66,6 +58,16 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.colFailedIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFailedBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFailedStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFailedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFailedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuccesssIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuccesssBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuccesssStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuccesssDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuccesssTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSuccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFailed)).BeginInit();
             this.SuspendLayout();
@@ -152,7 +154,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(357, 115);
+            this.label3.Location = new System.Drawing.Point(464, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 11;
@@ -204,7 +206,7 @@
             // 
             // buttonClearSuccess
             // 
-            this.buttonClearSuccess.Location = new System.Drawing.Point(258, 109);
+            this.buttonClearSuccess.Location = new System.Drawing.Point(302, 109);
             this.buttonClearSuccess.Name = "buttonClearSuccess";
             this.buttonClearSuccess.Size = new System.Drawing.Size(93, 22);
             this.buttonClearSuccess.TabIndex = 17;
@@ -214,7 +216,7 @@
             // 
             // buttonClearFailed
             // 
-            this.buttonClearFailed.Location = new System.Drawing.Point(620, 110);
+            this.buttonClearFailed.Location = new System.Drawing.Point(727, 110);
             this.buttonClearFailed.Name = "buttonClearFailed";
             this.buttonClearFailed.Size = new System.Drawing.Size(75, 22);
             this.buttonClearFailed.TabIndex = 18;
@@ -235,7 +237,7 @@
             // 
             this.labelCounterFailed.AutoSize = true;
             this.labelCounterFailed.ForeColor = System.Drawing.Color.Red;
-            this.labelCounterFailed.Location = new System.Drawing.Point(399, 115);
+            this.labelCounterFailed.Location = new System.Drawing.Point(506, 115);
             this.labelCounterFailed.Name = "labelCounterFailed";
             this.labelCounterFailed.Size = new System.Drawing.Size(13, 13);
             this.labelCounterFailed.TabIndex = 20;
@@ -244,7 +246,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(590, 9);
+            this.linkLabel1.Location = new System.Drawing.Point(682, 9);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(120, 13);
             this.linkLabel1.TabIndex = 21;
@@ -261,10 +263,11 @@
             this.dataGridViewSuccess.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dataGridViewSuccess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSuccess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cIP,
-            this.cStatus,
-            this.cDate,
-            this.cTime});
+            this.colSuccesssIP,
+            this.colSuccesssBytes,
+            this.colSuccesssStatus,
+            this.colSuccesssDate,
+            this.colSuccesssTime});
             this.dataGridViewSuccess.Location = new System.Drawing.Point(11, 136);
             this.dataGridViewSuccess.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSuccess.Name = "dataGridViewSuccess";
@@ -273,40 +276,8 @@
             this.dataGridViewSuccess.RowHeadersVisible = false;
             this.dataGridViewSuccess.RowHeadersWidth = 51;
             this.dataGridViewSuccess.RowTemplate.Height = 24;
-            this.dataGridViewSuccess.Size = new System.Drawing.Size(340, 348);
+            this.dataGridViewSuccess.Size = new System.Drawing.Size(384, 348);
             this.dataGridViewSuccess.TabIndex = 22;
-            // 
-            // cIP
-            // 
-            this.cIP.FillWeight = 102.0748F;
-            this.cIP.HeaderText = "IP";
-            this.cIP.MinimumWidth = 6;
-            this.cIP.Name = "cIP";
-            this.cIP.ReadOnly = true;
-            // 
-            // cStatus
-            // 
-            this.cStatus.FillWeight = 77.88841F;
-            this.cStatus.HeaderText = "Status";
-            this.cStatus.MinimumWidth = 6;
-            this.cStatus.Name = "cStatus";
-            this.cStatus.ReadOnly = true;
-            // 
-            // cDate
-            // 
-            this.cDate.FillWeight = 98.20932F;
-            this.cDate.HeaderText = "Date";
-            this.cDate.MinimumWidth = 6;
-            this.cDate.Name = "cDate";
-            this.cDate.ReadOnly = true;
-            // 
-            // cTime
-            // 
-            this.cTime.FillWeight = 121.8274F;
-            this.cTime.HeaderText = "Time";
-            this.cTime.MinimumWidth = 6;
-            this.cTime.Name = "cTime";
-            this.cTime.ReadOnly = true;
             // 
             // dataGridViewFailed
             // 
@@ -318,50 +289,19 @@
             this.dataGridViewFailed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFailed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFailedIP,
+            this.colFailedBytes,
             this.colFailedStatus,
             this.colFailedDate,
             this.colFailedTime});
-            this.dataGridViewFailed.Location = new System.Drawing.Point(355, 136);
+            this.dataGridViewFailed.Location = new System.Drawing.Point(399, 136);
             this.dataGridViewFailed.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewFailed.Name = "dataGridViewFailed";
             this.dataGridViewFailed.ReadOnly = true;
             this.dataGridViewFailed.RowHeadersVisible = false;
             this.dataGridViewFailed.RowHeadersWidth = 51;
             this.dataGridViewFailed.RowTemplate.Height = 24;
-            this.dataGridViewFailed.Size = new System.Drawing.Size(340, 348);
+            this.dataGridViewFailed.Size = new System.Drawing.Size(403, 348);
             this.dataGridViewFailed.TabIndex = 23;
-            // 
-            // colFailedIP
-            // 
-            this.colFailedIP.FillWeight = 106.3119F;
-            this.colFailedIP.HeaderText = "IP";
-            this.colFailedIP.MinimumWidth = 6;
-            this.colFailedIP.Name = "colFailedIP";
-            this.colFailedIP.ReadOnly = true;
-            // 
-            // colFailedStatus
-            // 
-            this.colFailedStatus.FillWeight = 76.66875F;
-            this.colFailedStatus.HeaderText = "Status";
-            this.colFailedStatus.MinimumWidth = 6;
-            this.colFailedStatus.Name = "colFailedStatus";
-            this.colFailedStatus.ReadOnly = true;
-            // 
-            // colFailedDate
-            // 
-            this.colFailedDate.FillWeight = 95.19191F;
-            this.colFailedDate.HeaderText = "Date";
-            this.colFailedDate.MinimumWidth = 6;
-            this.colFailedDate.Name = "colFailedDate";
-            this.colFailedDate.ReadOnly = true;
-            // 
-            // colFailedTime
-            // 
-            this.colFailedTime.FillWeight = 121.8274F;
-            this.colFailedTime.HeaderText = "Time";
-            this.colFailedTime.MinimumWidth = 6;
-            this.colFailedTime.Name = "colFailedTime";
-            this.colFailedTime.ReadOnly = true;
             // 
             // TimeOut
             // 
@@ -418,11 +358,87 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "byte";
             // 
+            // colFailedIP
+            // 
+            this.colFailedIP.FillWeight = 106.3119F;
+            this.colFailedIP.HeaderText = "IP";
+            this.colFailedIP.MinimumWidth = 6;
+            this.colFailedIP.Name = "colFailedIP";
+            this.colFailedIP.ReadOnly = true;
+            // 
+            // colFailedBytes
+            // 
+            this.colFailedBytes.HeaderText = "Bytes";
+            this.colFailedBytes.Name = "colFailedBytes";
+            this.colFailedBytes.ReadOnly = true;
+            // 
+            // colFailedStatus
+            // 
+            this.colFailedStatus.FillWeight = 76.66875F;
+            this.colFailedStatus.HeaderText = "Status";
+            this.colFailedStatus.MinimumWidth = 6;
+            this.colFailedStatus.Name = "colFailedStatus";
+            this.colFailedStatus.ReadOnly = true;
+            // 
+            // colFailedDate
+            // 
+            this.colFailedDate.FillWeight = 95.19191F;
+            this.colFailedDate.HeaderText = "Date";
+            this.colFailedDate.MinimumWidth = 6;
+            this.colFailedDate.Name = "colFailedDate";
+            this.colFailedDate.ReadOnly = true;
+            // 
+            // colFailedTime
+            // 
+            this.colFailedTime.FillWeight = 121.8274F;
+            this.colFailedTime.HeaderText = "Time";
+            this.colFailedTime.MinimumWidth = 6;
+            this.colFailedTime.Name = "colFailedTime";
+            this.colFailedTime.ReadOnly = true;
+            // 
+            // colSuccesssIP
+            // 
+            this.colSuccesssIP.FillWeight = 102.0748F;
+            this.colSuccesssIP.HeaderText = "IP";
+            this.colSuccesssIP.MinimumWidth = 6;
+            this.colSuccesssIP.Name = "colSuccesssIP";
+            this.colSuccesssIP.ReadOnly = true;
+            // 
+            // colSuccesssBytes
+            // 
+            this.colSuccesssBytes.HeaderText = "Bytes";
+            this.colSuccesssBytes.Name = "colSuccesssBytes";
+            this.colSuccesssBytes.ReadOnly = true;
+            // 
+            // colSuccesssStatus
+            // 
+            this.colSuccesssStatus.FillWeight = 77.88841F;
+            this.colSuccesssStatus.HeaderText = "Status";
+            this.colSuccesssStatus.MinimumWidth = 6;
+            this.colSuccesssStatus.Name = "colSuccesssStatus";
+            this.colSuccesssStatus.ReadOnly = true;
+            // 
+            // colSuccesssDate
+            // 
+            this.colSuccesssDate.FillWeight = 98.20932F;
+            this.colSuccesssDate.HeaderText = "Date";
+            this.colSuccesssDate.MinimumWidth = 6;
+            this.colSuccesssDate.Name = "colSuccesssDate";
+            this.colSuccesssDate.ReadOnly = true;
+            // 
+            // colSuccesssTime
+            // 
+            this.colSuccesssTime.FillWeight = 121.8274F;
+            this.colSuccesssTime.HeaderText = "Time";
+            this.colSuccesssTime.MinimumWidth = 6;
+            this.colSuccesssTime.Name = "colSuccesssTime";
+            this.colSuccesssTime.ReadOnly = true;
+            // 
             // Pingwithloop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 510);
+            this.ClientSize = new System.Drawing.Size(814, 510);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxBufferSize);
@@ -483,14 +499,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.DataGridView dataGridViewSuccess;
         private System.Windows.Forms.DataGridView dataGridViewFailed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedTime;
         private System.Windows.Forms.Label TimeOut;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxTimeOut;
@@ -498,6 +506,16 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSuccesssIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSuccesssBytes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSuccesssStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSuccesssDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSuccesssTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedBytes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedTime;
     }
 }
 
