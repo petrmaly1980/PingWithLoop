@@ -68,6 +68,7 @@
             this.colSuccesssStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSuccesssDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSuccesssTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSuccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFailed)).BeginInit();
             this.SuspendLayout();
@@ -434,11 +435,21 @@
             this.colSuccesssTime.Name = "colSuccesssTime";
             this.colSuccesssTime.ReadOnly = true;
             // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(372, 77);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(37, 13);
+            this.labelStatus.TabIndex = 30;
+            this.labelStatus.Text = "Status";
+            // 
             // Pingwithloop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 510);
+            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxBufferSize);
@@ -516,6 +527,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFailedStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFailedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFailedTime;
+        private System.Windows.Forms.Label labelStatus;
     }
 }
 

@@ -56,6 +56,7 @@ namespace Pingwithloop
                 Ping ping = new Ping();
                 PingReply reply = ping.Send(textBoxIP.Text, Convert.ToInt32(textBoxTimeOut.Text), buffer);
                 DateTime now = DateTime.Now;
+                
                 if (reply.Status == IPStatus.Success)
                 {
                     //textBoxSuccess.AppendText("Ping to " + textBoxIP.Text + " " + reply.Status + " " + now + Environment.NewLine);
@@ -74,6 +75,7 @@ namespace Pingwithloop
                 counterAll = counterSuccess + counterFailed;
                 labelCounterAll.Text = counterAll.ToString();
                 
+
             }
             
         }
@@ -93,7 +95,9 @@ namespace Pingwithloop
             {
                 timer1.Stop();
                 buttonPingLoopStart.Enabled = true;
-                
+                buttonPingLoopStop.Enabled = false;
+                labelStatus.Text = "Stoped";
+
             }
         }
         
@@ -105,6 +109,8 @@ namespace Pingwithloop
             timer1.Interval =  Convert.ToInt32(textBoxTimeLoop.Text) * 1000;
             buttonPingLoopStart.Enabled = false;
             buttonPingLoopStop.Enabled = true;
+            labelStatus.Text = "Running";
+            labelStatus.ForeColor = Color.Green;
         }
 
         private void buttonPingLoopStop_Click(object sender, EventArgs e)
@@ -112,6 +118,8 @@ namespace Pingwithloop
             timer1.Stop();
             buttonPingLoopStart.Enabled = true;
             buttonPingLoopStop.Enabled = false;
+            labelStatus.Text = "Stoped";
+            labelStatus.ForeColor = Color.Red;
         }
 
         private void buttonClearSuccess_Click(object sender, EventArgs e)
