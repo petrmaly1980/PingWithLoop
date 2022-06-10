@@ -10,12 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Pingwithloop
 {
     public partial class Pingwithloop : Form
     {
-        
         public Pingwithloop()
         {
             InitializeComponent();
@@ -23,13 +21,8 @@ namespace Pingwithloop
         }
         public void MyInit()
         {
-            
-        
             buttonPingLoopStart.Enabled = true;
             buttonPingLoopStop.Enabled = false;
-
-            
-
         }
         IPAddress ip;
         int counterSuccess = 0;
@@ -56,19 +49,16 @@ namespace Pingwithloop
 
         public void PingIP()
         {
-           
-            
             bool ValidateIP = IPAddress.TryParse(textBoxIP.Text, out ip);
             if (!ValidateIP)
             {
                 MessageBox.Show("Zadejte platnou IP", "Kontrola IP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timer1.Stop();
                 MyInit();
-                
             }
             else
             {
-                var buf = RandomBufferSize(32, 64);
+                var buf = RandomBufferSize(Convert.ToInt32(textBoxRandomMin.Text), Convert.ToInt32(textBoxRandomMax.Text));
                 Ping ping = new Ping();
                 PingReply reply = ping.Send(textBoxIP.Text, Convert.ToInt32(textBoxTimeOut.Text), buf);
                 DateTime now = DateTime.Now;
@@ -79,7 +69,6 @@ namespace Pingwithloop
                     counterSuccess++;
                     labelCounterSuccess.Text = counterSuccess.ToString();
                     dataGridViewSuccess.Rows.Add (textBoxIP.Text, buf.Length,  reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
-
                 }
                 else
                 {
@@ -90,8 +79,6 @@ namespace Pingwithloop
                 }
                 counterAll = counterSuccess + counterFailed;
                 labelCounterAll.Text = counterAll.ToString();
-                
-
             }
             
         }
@@ -103,7 +90,6 @@ namespace Pingwithloop
         private void onTick(object sender, EventArgs e)
         {
             ticks++;
-            
             //progressBarCounterLimit.Maximum = Convert.ToInt32(textBoxCounterLimit.Text);
             //progressBarCounterLimit.Value = _ticks;
             PingIP();
@@ -113,14 +99,10 @@ namespace Pingwithloop
                 buttonPingLoopStart.Enabled = true;
                 buttonPingLoopStop.Enabled = false;
                 labelStatus.Text = "Stoped";
-
             }
         }
-        
         private void buttonPingLoopStart_Click(object sender, EventArgs e)
         {
-            
-            
             timer1.Start();
             timer1.Interval =  Convert.ToInt32(textBoxTimeLoop.Text) * 1000;
             buttonPingLoopStart.Enabled = false;
@@ -128,7 +110,6 @@ namespace Pingwithloop
             labelStatus.Text = "Running";
             labelStatus.ForeColor = Color.Green;
         }
-
         private void buttonPingLoopStop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
@@ -145,7 +126,6 @@ namespace Pingwithloop
             labelCounterSuccess.Text = "0";
             counterSuccess = 0;
         }
-
         private void buttonClearFailed_Click(object sender, EventArgs e)
         {
             dataGridViewFailed.Rows.Clear();
@@ -153,7 +133,6 @@ namespace Pingwithloop
             labelCounterFailed.Text = "0";
             counterFailed = 0;
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://sites.google.com/view/petr-maly/");

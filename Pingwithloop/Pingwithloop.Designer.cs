@@ -468,6 +468,7 @@
             this.textBoxRandomMin.Name = "textBoxRandomMin";
             this.textBoxRandomMin.Size = new System.Drawing.Size(49, 20);
             this.textBoxRandomMin.TabIndex = 33;
+            this.textBoxRandomMin.Text = "32";
             // 
             // textBoxRandomMax
             // 
@@ -475,6 +476,7 @@
             this.textBoxRandomMax.Name = "textBoxRandomMax";
             this.textBoxRandomMax.Size = new System.Drawing.Size(49, 20);
             this.textBoxRandomMax.TabIndex = 34;
+            this.textBoxRandomMax.Text = "65535";
             // 
             // label11
             // 
