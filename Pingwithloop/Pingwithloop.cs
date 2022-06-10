@@ -37,12 +37,27 @@ namespace Pingwithloop
         int counterAll = 0;
 
         
-
-
+        public byte[] RandomBufferSize(int min, int max)
+        {
+            if (checkBoxRandomPacketSize.Checked)
+            {
+                Random myObject = new Random();
+                int result = myObject.Next(min, max);
+                byte[] resultInBytes = new byte[Convert.ToInt32(result)];
+                return resultInBytes;
+            }
+            else
+            {
+                byte[] buffer = new byte[Convert.ToInt32(textBoxBufferSize.Text)];
+                return buffer;
+            }
+            
+        }
 
         public void PingIP()
         {
-            byte[] buffer = new byte[Convert.ToInt32(textBoxBufferSize.Text)];
+           
+            
             bool ValidateIP = IPAddress.TryParse(textBoxIP.Text, out ip);
             if (!ValidateIP)
             {
@@ -53,8 +68,9 @@ namespace Pingwithloop
             }
             else
             {
+                var buf = RandomBufferSize(32, 64);
                 Ping ping = new Ping();
-                PingReply reply = ping.Send(textBoxIP.Text, Convert.ToInt32(textBoxTimeOut.Text), buffer);
+                PingReply reply = ping.Send(textBoxIP.Text, Convert.ToInt32(textBoxTimeOut.Text), buf);
                 DateTime now = DateTime.Now;
                 
                 if (reply.Status == IPStatus.Success)
@@ -62,7 +78,7 @@ namespace Pingwithloop
                     //textBoxSuccess.AppendText("Ping to " + textBoxIP.Text + " " + reply.Status + " " + now + Environment.NewLine);
                     counterSuccess++;
                     labelCounterSuccess.Text = counterSuccess.ToString();
-                    dataGridViewSuccess.Rows.Add (textBoxIP.Text, textBoxBufferSize.Text,  reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
+                    dataGridViewSuccess.Rows.Add (textBoxIP.Text, buf.Length,  reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
 
                 }
                 else
@@ -70,7 +86,7 @@ namespace Pingwithloop
                     //textBoxFailed.AppendText("Ping to " + textBoxIP.Text + " " + reply.Status + " " + now + Environment.NewLine);
                     counterFailed++;
                     labelCounterFailed.Text = counterFailed.ToString();
-                    dataGridViewFailed.Rows.Add(textBoxIP.Text, textBoxBufferSize.Text, reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
+                    dataGridViewFailed.Rows.Add(textBoxIP.Text, buf.Length, reply.Status, DateTime.Now.ToString("MM/dd/yyyy"), DateTime.Now.ToString("HH:mm:ss"));
                 }
                 counterAll = counterSuccess + counterFailed;
                 labelCounterAll.Text = counterAll.ToString();
