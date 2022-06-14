@@ -76,6 +76,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSuccess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFailed)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -455,7 +456,7 @@
             // checkBoxRandomPacketSize
             // 
             this.checkBoxRandomPacketSize.AutoSize = true;
-            this.checkBoxRandomPacketSize.Location = new System.Drawing.Point(166, 31);
+            this.checkBoxRandomPacketSize.Location = new System.Drawing.Point(193, 28);
             this.checkBoxRandomPacketSize.Name = "checkBoxRandomPacketSize";
             this.checkBoxRandomPacketSize.Size = new System.Drawing.Size(120, 17);
             this.checkBoxRandomPacketSize.TabIndex = 32;
@@ -476,7 +477,7 @@
             this.textBoxRandomMax.Name = "textBoxRandomMax";
             this.textBoxRandomMax.Size = new System.Drawing.Size(49, 20);
             this.textBoxRandomMax.TabIndex = 34;
-            this.textBoxRandomMax.Text = "65535";
+            this.textBoxRandomMax.Text = "1024";
             // 
             // label11
             // 
@@ -498,6 +499,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.checkBoxRandomPacketSize);
             this.groupBox1.Controls.Add(this.label12);
@@ -506,7 +508,7 @@
             this.groupBox1.Controls.Add(this.textBoxRandomMax);
             this.groupBox1.Location = new System.Drawing.Point(15, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 71);
+            this.groupBox1.Size = new System.Drawing.Size(319, 86);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Random packet";
@@ -519,6 +521,15 @@
             this.label13.Size = new System.Drawing.Size(32, 13);
             this.label13.TabIndex = 37;
             this.label13.Text = "bytes";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(99, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 13);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Max 65535";
             // 
             // Pingwithloop
             // 
@@ -614,6 +625,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 
