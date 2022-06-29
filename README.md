@@ -5,3 +5,4 @@ Setting Options:
 *Buffer size
 *Reapeat in(ms)
 *Repeat count (counter limit)
+![](images/screen.png)
