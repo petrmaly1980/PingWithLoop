@@ -107,6 +107,7 @@ namespace Pingwithloop
             timer1.Interval =  Convert.ToInt32(textBoxTimeLoop.Text) * 1000;
             buttonPingLoopStart.Enabled = false;
             buttonPingLoopStop.Enabled = true;
+            buttonUnlimitedPing.Enabled = false;
             labelStatus.Text = "Running";
             labelStatus.ForeColor = Color.Green;
         }
@@ -114,6 +115,7 @@ namespace Pingwithloop
         {
             timer1.Stop();
             buttonPingLoopStart.Enabled = true;
+            buttonUnlimitedPing.Enabled= true;
             buttonPingLoopStop.Enabled = false;
             labelStatus.Text = "Stoped";
             labelStatus.ForeColor = Color.Red;
@@ -136,6 +138,34 @@ namespace Pingwithloop
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://sites.google.com/view/petr-maly/");
+        }
+
+        private void checkBoxCounterUnlimited_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUnlimitedPing_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            //timer1.Interval = Convert.ToInt32(textBoxTimeLoop.Text) * 1000;
+            buttonUnlimitedPing.Enabled = false;
+            buttonPingLoopStop.Enabled = true;
+            buttonPingLoopStart.Enabled = false;
+            textBoxCounterLimit.Enabled= false;
+            labelStatus.Text = "Running";
+            labelStatus.ForeColor = Color.Green;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About a = new About();
+            a.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
